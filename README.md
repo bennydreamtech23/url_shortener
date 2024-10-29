@@ -50,3 +50,7 @@ https://hexdocs.pm/phoenix/routing.html
 https://devhints.io/phoenix-routing
 https://elixir-phoenix-ash.com/phoenix/index.html
 
+Elixir Verions
+Erlang/OTP 25 [erts-13.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
+Elixir 1.14.4 (compiled with Erlang/OTP 23)
+
