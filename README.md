@@ -1,5 +1,35 @@
 # UrlShortener
 
+ELIXIRFORGE
+PROJECT NAME: URL SHORTENER
+DESCRIPTION:
+To enable users type in url, the system shortens the url and also redirect the shorten format of that url to the original url.
+
+steps by steps way to achieve:
+collect the original url
+save the original url
+return a shorten format of the url
+type the shorten format in their browser and still get redirected to the original url.
+
+
+what we want to achieve:
+what to learn form handling
+how to save in ets table
+error handling
+
+
+what we achieve
+create an ets table
+learn how to use genserver
+
+
+next time:
+create a form doee already
+url validation url.
+save the url and correct the timestamp
+write a function to shorten the url
+
+
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
@@ -11,8 +41,12 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## Learn more
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+  https://dockyard.com/blog/2017/05/19/optimizing-elixir-and-phoenix-with-ets
+https://elixirschool.com/en/lessons/storage/ets
+https://hexdocs.pm/etso/readme.html#:~:text=Etso%20is%20an%20ETS%20adapter,Ecto%20Repo%20and%20Schema%20combination.
+https://elixirschool.com/en/why
+elixir mentor on https://elixirmentor.com/
+https://hexdocs.pm/phoenix/routing.html
+https://devhints.io/phoenix-routing
+https://elixir-phoenix-ash.com/phoenix/index.html
+
