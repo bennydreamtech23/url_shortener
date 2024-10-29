@@ -56,10 +56,8 @@ defmodule UrlShortener.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.2"},
       {:phoenix_ecto, "~> 4.6"},
-{:ecto, "~>3.8.3"},
-  {:etso, "~> 1.1.0"}
-
-
+      {:ecto, "~> 3.8"},
+      {:etso, "~> 1.1"}
     ]
   end
 
