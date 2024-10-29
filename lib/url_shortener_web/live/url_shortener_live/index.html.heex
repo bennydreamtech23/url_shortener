@@ -1,0 +1,25 @@
+<div class="max-sm-screen">
+  <h1>Shorten URL</h1>
+
+  <.form
+    for={@form}
+    id="shortened_url"
+    phx-change="validate"
+    phx-submit="submit"
+    class="flex flex-col gap-4"
+  >
+    <.input type="text" placeholder="Enter URL" field={@form[:long_url]} />
+    <.button>Submit</.button>
+  </.form>
+
+  <%= if @error do %>
+    <p style="color: red;"><%= @error %></p>
+  <% end %>
+
+  <%= if @shortened_url do %>
+    <p>
+      Shortened URL:
+      <a href={@shortened_url} target="_blank" class="text-emerald-600"><%= @shortened_url %></a>
+    </p>
+  <% end %>
+</div>

@@ -1,5 +1,6 @@
 defmodule UrlShortenerWeb.Router do
-  use UrlShortenerWeb, :router
+  use(UrlShortenerWeb, :router)
+  use Phoenix.Router, helpers: true
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -17,7 +18,10 @@ defmodule UrlShortenerWeb.Router do
   scope "/", UrlShortenerWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
+    live "/", UrlShortenerLive.Index
+    get "/:short_key", UrlShortenerController, :show
+    resources "/urls", UrlShortenerController, only: [:show]
   end
 
   # Other scopes may use custom stacks.

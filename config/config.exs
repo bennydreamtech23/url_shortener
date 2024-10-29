@@ -30,6 +30,8 @@ config :url_shortener, UrlShortenerWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :url_shortener, UrlShortener.Mailer, adapter: Swoosh.Adapters.Local
 
+config :url_shortener, UrlShortener.Repo, adapter: Etso.Adapter
+
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",

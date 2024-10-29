@@ -8,6 +8,7 @@ defmodule UrlShortener.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      UrlShortener.Repo,
       UrlShortenerWeb.Telemetry,
       {UrlShortenerWeb.Services.UrlShortenerCache, []},
       {DNSCluster, query: Application.get_env(:url_shortener, :dns_cluster_query) || :ignore},

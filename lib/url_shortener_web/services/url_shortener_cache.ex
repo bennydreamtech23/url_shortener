@@ -11,6 +11,24 @@ defmodule UrlShortenerWeb.Services.UrlShortenerCache do
     GenServer.start_link(__MODULE__, [], name: __MODULE__)
   end
 
+  # Insert the original URL and return the shortened URL key
+  def insert_url(original_url) do
+    key = generate_short_url_key()
+    case insert(key, original_url) do
+      :ok -> {:ok, key}
+      error -> error
+    end
+  end
+
+  # Retrieve the original URL by its shortened key
+  def get_url(short_key) do
+    case get(short_key) do
+      {:ok, original_url} -> {:ok, original_url}
+      :expired -> {:error, "The URL has expired"}
+      :error -> {:error, "Shortened URL not found"}
+    end
+  end
+
   # Inserting key-value pair into the ETS table with an expiry timestamp
   def insert(key, value) do
     GenServer.call(__MODULE__, {:insert, key, value})
@@ -75,7 +93,14 @@ defmodule UrlShortenerWeb.Services.UrlShortenerCache do
     {:reply, all_records, state}
   end
 
-  ## Private helper function
+  ## Private helper functions
+
+  # Generate a random short URL key
+  defp generate_short_url_key do
+    :crypto.strong_rand_bytes(5)
+    |> Base.url_encode64()
+    |> binary_part(0, 5)
+  end
 
   defp not_expired?(expiry_timestamp) do
     System.system_time(:millisecond) < expiry_timestamp
